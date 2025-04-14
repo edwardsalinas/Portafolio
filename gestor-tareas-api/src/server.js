@@ -16,9 +16,13 @@ app.use(cors());
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
+const PORT = process.env.PORT || 3001; 
+
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() =>
-    app.listen(3001, () => console.log("Servidor corriendo en puerto 3001"))
+  .then(() => 
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Servidor corriendo en puerto ${PORT}`);
+    })
   )
   .catch((error) => console.log(error));
