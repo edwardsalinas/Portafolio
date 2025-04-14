@@ -11,7 +11,15 @@ const taskRoutes = require("./routes/tasks");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// Middlewares
+app.use(cors({
+  origin: [
+    'https://majestic-muffin-464472.netlify.app',
+    'http://localhost:5173' // Desarrollo local
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.get("/", (req, res) => {
   res.send("API del Gestor de Tareas está funcionando");
