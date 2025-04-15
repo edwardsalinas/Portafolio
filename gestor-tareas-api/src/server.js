@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     'https://majestic-muffin-464472.netlify.app',
+    'https://cool-banoffee-a6c4a1.netlify.app',
     'http://localhost:5173' // Desarrollo local
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
