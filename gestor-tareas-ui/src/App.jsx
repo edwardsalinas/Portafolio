@@ -1,5 +1,5 @@
 import { useAuth } from "./context/AuthContext";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -37,9 +37,9 @@ const AppRoutes = () => {
 
 const App = () => (
   <AuthProvider>
-    <BrowserRouter>
+    <HashRouter> 
       <AppRoutes />
-    </BrowserRouter>
+    </HashRouter>
   </AuthProvider>
 );
 
